@@ -2,7 +2,7 @@
 A simple modular template for AWS functionalities with terraform
 At the moment the repositry contains only a simple lambda example using a lambda with cloudwatch events.
 
-I dont recomend using private and acces keys on real life projects.
+I dont recomend using private and acces keys on plain text on real life projects, and if you use it for test purpose, make sure to change it to avoid billing problems on the future.
 
 To run , just use:
 Run:
