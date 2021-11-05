@@ -20,5 +20,15 @@ provider "aws" {
 */
 module "lambda" {
   source = "./lambda"
-  count = 1
+  count = 0
+}
+
+module "ecs-example" {
+  source = "./ecs"
+  count = 0
+}
+
+module "ec2-machine" {
+  source = "./ec2"
+  count = 0
 }

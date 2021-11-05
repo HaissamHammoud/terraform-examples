@@ -1,0 +1,9 @@
+[
+    {
+        "name": "cooking-app",
+        "image": "haissamfawaz/cooking-recipe-image:latest", 
+        "essential": true,
+        "cpu": 2,
+        "memory": 256
+    } 
+]
