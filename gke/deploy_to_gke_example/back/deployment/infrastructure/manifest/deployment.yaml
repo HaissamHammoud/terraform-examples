@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  labels:
+    app: backend
+  namespace: application
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: backend
+        image: haissamfawaz/neuraubackend:51c1638
+        # volumeMounts:
+        # - mountPath: "/scratch"
+        #   name: scratch-volume
+        ports:
+        - containerPort: 3000
+        envFrom:
+          - configMapRef:
+              name: backend
+          - secretRef:
+              name: backend
+      # volumes:
+      # - name: scratch-volume
+      #   ephemeral:
+      #     volumeClaimTemplate:
+      #       metadata:
+      #         labels:
+      #           type: my-frontend-volume
+      #       spec:
+      #         accessModes: [ "ReadWriteOnce" ]
+      #         storageClassName: "scratch-storage-class"
+      #         resources:
+      #           requests:
+      #             storage: 1Gi

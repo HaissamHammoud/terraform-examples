@@ -1,0 +1,17 @@
+
+kind: NetworkPolicy
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: test
+  namespace: application
+spec:
+  policyTypes:
+  - Ingress
+  podSelector:
+    matchLabels:
+      app: backend
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          app: frontend-neuraumed
