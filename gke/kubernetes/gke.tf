@@ -1,6 +1,3 @@
-# Chose GKE intead of EKS because it fits more with the neuraumed infraestructure 
-# 
-
 resource "google_container_cluster" "primary" {
   name     = "${var.project_id}-gke"
   location = var.region
