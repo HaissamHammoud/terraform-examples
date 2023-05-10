@@ -32,3 +32,14 @@ module "ec2-machine" {
   source = "./ec2"
   count = 0
 }
+
+module "gke" {
+  source = "./gke/kuberneter"
+  count = 0
+
+  project_id="operating-ethos-383111"
+  region="us-central1"
+  node_disk_size=20
+  gke_num_nodes=1
+  namespaces= ["application", "test", "monitoring"]
+}

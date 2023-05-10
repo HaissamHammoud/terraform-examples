@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: frontend
+  namespace: application
+data:
+  SERVICE_PORT: "3000"
+  BACKEND_HOST: "backend"
+  BACKEND_PORT: "80"
