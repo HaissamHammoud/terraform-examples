@@ -34,7 +34,7 @@ module "ec2-machine" {
 }
 
 module "gke" {
-  source = "./gke/kuberneter"
+  source = "./kubernetes/gke"
   count = 0
 
   project_id="operating-ethos-383111"
